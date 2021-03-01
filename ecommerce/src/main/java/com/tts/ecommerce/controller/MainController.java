@@ -31,8 +31,9 @@ public class MainController {
         return productService.findAll();
     }
 
+    @ModelAttribute("categories")
     public List<String>categories(){
-        return productService.findDistinctCategory();
+        return productService.findDistinctCategories();
     }
 
     @ModelAttribute("brands")
@@ -44,7 +45,7 @@ public class MainController {
     public String filter(@RequestParam(required=false)String category,
                          @RequestParam(required = false)String brand,
                          Model model){
-        List<Product>filtered=productService.findByBrandAndCategory(brand, category);
+        List<Product>filtered=productService.findByBrandAndOrCategory(brand, category);
         model.addAttribute("products",filtered);
         return "main";
 
@@ -53,5 +54,9 @@ public class MainController {
     public String about(){
         return "about";
     }
+
+
+
+
 
 }

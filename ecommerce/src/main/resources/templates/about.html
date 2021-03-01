@@ -1,13 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>About</title>
-</head>
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="fragments/fragments :: head"></head>
 <body>
-This is the about page.
-<h1>Under Construction!</h1>
-<iframe src="https://i.giphy.com/media/S5JSwmQYHOGMo/200.gif" width="480" height="320" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<div th:replace="fragments/navbar :: navbar"></div>
+<main role="main">
+       <!-- Main jumbotron for a primary marketing message or call to action -->
+       <div class="jumbotron">
+              <div class="container">
+                     <h1 class="display-3">Amazing Amigurumi!</h1>
+                     <p>Amigurumi, 編みぐるみ is the Japanese art of knitting or crocheting small, stuffed yarn creatures.</p>
+                     <p>If its tiny or cute you'll find it here. All 100% handmade.</p>
+                     <iframe src="https://images.saymedia-content.com/.image/c_limit%2Ccs_srgb%2Cq_auto:good%2Cw_700/MTc0NDk4NjM5MDEwMzQyMjQ4/amigurumi-passion.webp" width="820" height="880" frameBorder="0"
+                            allowFullScreen></iframe>
+              </div>
+       </div>
+</main>
+
 </body>
 </html>
-

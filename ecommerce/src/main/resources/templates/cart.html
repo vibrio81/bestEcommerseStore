@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <div th:replace="fragments/fragments :: head"></div>
+
+</head>
+<body style="padding: 0">
+<div th:insert="~{fragments/navbar :: navbar}">...</div>
+<main role="main">
+    <div class="jumbotron">
+        <div class="container">
+
+            <h1>Amazing Amigurumi Store</h1>
+            <!--<image src="https://i.chzbgr.com/full/4649015040/h83AFCF79/shopping-go-carts" width="480" height="320" padding="15" frameBorder="10" ></image>-->
+            <h3> Your cart</h3>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="card col-md-3 small-product-card" th:each="product:${cart}">
+                <!--     th:each="product:${cart}">-->
+<!--                <p> Product: </p>-->
+                <label th:text=" 'Product: '+ ${product.key.name}"></label>
+
+                <label  th:text=" 'Quantity in cart: ' +${product.value}"></label>
+
+                <label th:text="'Price: $' + ${product.key.price}"></label>
+
+                <img th:src="@{${product.key.image}}"/>
+
+
+                <a th:href="@{/product/{id}(id=${product.key.id})}"><button class="btn btn-warning">Remove From Cart</button></a>
+
+
+            </div>
+
+        </div>
+
+    </div>
+    <p><a class="btn btn-primary btn-lg" href="/checkout" role="button">Checkout</a></p>
+    <div th:replace="fragments/footer :: footer"></div>
+</main>
+</body>
+</html>

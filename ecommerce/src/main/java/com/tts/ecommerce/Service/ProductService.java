@@ -21,8 +21,8 @@ public class ProductService {
     public List<String> findDistinctBrands(){
         return productRepository.findDistinctBrands();
     }
-    public List<String> findDistinctCategory() {
-        return productRepository.findDistinctCategory();
+    public List<String> findDistinctCategories() {
+        return productRepository.findDistinctCategories();
     }
     public void save (Product product){
         productRepository.save(product);
@@ -30,16 +30,17 @@ public class ProductService {
     public void deleteById(Long id){
         productRepository.deleteById(id);
     }
-    public List<Product> findByBrandAndCategory(String brand, String category){
-        if (category==null && brand == null) {
+    public List<Product> findByBrandAndOrCategory(String brand, String category) {
+        if (category == null && brand == null)
             return productRepository.findAll();
-        }else if (category==null){
+        else if (category == null)
             return productRepository.findByBrand(brand);
-        }else if (brand ==null){
+        else if (brand == null)
             return productRepository.findByCategory(category);
-        }else{
-            return productRepository.findByBrandAndCategory(brand,category);
-        }
+        else
+            return productRepository.findByBrandAndCategory(brand, category);
 
+
+        }
     }
-}
+

@@ -9,6 +9,11 @@ com/tts/ecommerce/controller/AuthenticationController.java
  com.tts.ecommerce.controller.AuthenticationController
 com/tts/ecommerce/Model/User.java
  com.tts.ecommerce.Model.User
+com/tts/ecommerce/Service/StripeService.java
+ com.tts.ecommerce.Service.StripeService
+com/tts/ecommerce/Model/ChargeRequest.java
+ com.tts.ecommerce.Model.ChargeRequest
+ com.tts.ecommerce.Model.ChargeRequest$Currency
 com/tts/ecommerce/Model/Product.java
  com.tts.ecommerce.Model.Product
  com.tts.ecommerce.Model.Product$ProductBuilder
@@ -20,6 +25,8 @@ com/tts/ecommerce/SecurityConfig/WebMvcConfiguration.java
  com.tts.ecommerce.SecurityConfig.WebMvcConfiguration
 com/tts/ecommerce/controller/ProductController.java
  com.tts.ecommerce.controller.ProductController
+com/tts/ecommerce/controller/CheckoutController.java
+ com.tts.ecommerce.controller.CheckoutController
 com/tts/ecommerce/Repository/UserRepository.java
  com.tts.ecommerce.Repository.UserRepository
 com/tts/ecommerce/EcommerceApplication.java
@@ -28,3 +35,5 @@ com/tts/ecommerce/Service/ProductService.java
  com.tts.ecommerce.Service.ProductService
 com/tts/ecommerce/SecurityConfig/SecurityConfiguration.java
  com.tts.ecommerce.SecurityConfig.SecurityConfiguration
+com/tts/ecommerce/controller/ChargeController.java
+ com.tts.ecommerce.controller.ChargeController

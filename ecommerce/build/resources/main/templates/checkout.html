@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/fragments :: head"></head>
+<head>
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous">
+</head>
+<body style="padding: 0">
+<div th:replace="fragments/navbar :: navbar"></div>
+<main role="main">
+    <div class="container">
+        <form action='/charge' method='POST' id='checkout-form'>
+            <input type='hidden' th:value='${amount}' name='amount' />
+            <label>Price:<span th:text='${amount/100}' /></label>
+            <!-- NOTE: data-key/data-amount/data-currency will be rendered by Thymeleaf -->
+            <script
+                    src='https://checkout.stripe.com/checkout.js'
+                    class='stripe-button'
+                    th:attr='data-key=${stripePublicKey},
+                         data-amount=${amount},
+                         data-currency=${currency}'
+                    data-name='Buy my Stuff!'
+                    data-description='Spring course checkout'
+                    data-image='https://image-cdn.neatoshop.com/styleimg/106173/none/white/default/461637-20;1593970030x.jpg'
+                    data-locale='auto'
+                    data-zip-code='false'>
+            </script>
+        </form>
+
+
+    </div>
+</main>
+</body>
+</html>

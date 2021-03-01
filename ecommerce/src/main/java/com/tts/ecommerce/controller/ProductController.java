@@ -18,7 +18,7 @@ public class ProductController {
     ProductService productService;
 
     @GetMapping("/product/{id}")
-    public String show(@PathVariable Long id, Model model){
+    public String show(@PathVariable int id, Model model){
         Product product = productService.findById(id);
         model.addAttribute(product);
         return "product";
@@ -28,5 +28,12 @@ public class ProductController {
         productService.save(product);
         return "redirect:/product/ " + product.getId();
     }
+    @GetMapping("/addProduct")
+    public String addProduct(Model model){
+        Product newProduct = new Product();
+        model.addAttribute("product", newProduct);
+        return "addProduct";
+    }
+
 
 }
